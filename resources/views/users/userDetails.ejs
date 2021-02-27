@@ -1,0 +1,37 @@
+<section class="user_detail">
+  <div class="cstm_container">
+    <h2 class="user_detail_head">User Detail</h2>
+    <table class="table table-bordered text-center">
+      <thead>
+        <tr class="">
+          <th>id</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Phone No</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% users.forEach((user,i) => {%>
+        <tr>
+          <td><%- i + 1 %></td>
+          <td><%- user.username%></td>
+          <td><%- user.email %></td>
+          <td><%- user.phone %></td>
+          <td>
+            <a class="user_btn edit_btn" href="/editUser/ <%= user._id %>"
+              ><i class="far fa-edit"></i
+            ></a>
+            <a
+              href="/delete/ <%= user._id %>"
+              class="user_btn del_btn"
+              onclick="confirm('Press a button!')"
+              ><i class="fas fa-trash-alt"></i
+            ></a>
+          </td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
+</section>
